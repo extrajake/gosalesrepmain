@@ -4,75 +4,91 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"><--![endif]-->
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Employee ID Card</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="c-style.css" />
     <style>
-        .img-holder img {
-            text-align: center;
-            margin: auto;
-        }
-        
-        .filter-result .job-box {
-            width: 270px;
-        }
-    </style>
-</head>
+      .img-holder img {
+        text-align: center;
+        margin: auto;
+      }
 
-<body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+      .filter-result .job-box {
+        width: 270px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
+      integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY="
+      crossorigin="anonymous"
+    />
 
     <div class="container mb-5">
-        <div class="row">
-            <div class="col-lg-10 mx-auto my-5 text-light">
-                <div class="section-title text-center ">
-                    <img class="col-lg-6 bg-dark mb-5 p-5 rounded" src="img/apply-logo.png" alt="" />
-                    <h3 class="top-c-sep">GO SALES Representatives</h3>
-                    <p>
-                        Go Sales is a sales consulting firm that introduces businesses to new opportunities for growth. We give our partners a competitive edge because our results-oriented and high-skilled team is solely dedicated to producing sales results.
-                    </p>
+      <div class="row">
+        <div class="col-lg-10 mx-auto my-5 text-light">
+          <div class="section-title text-center ">
+            <img
+              class="col-lg-6 bg-dark mb-5 p-5 rounded"
+              src="img/apply-logo.png"
+              alt=""
+            />
+            <h3 class="top-c-sep">GO SALES Representatives</h3>
+            <p>
+              Go Sales is a sales consulting firm that introduces businesses to
+              new opportunities for growth. We give our partners a competitive
+              edge because our results-oriented and high-skilled team is solely
+              dedicated to producing sales results.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <img src="" alt="" id="rep-img" class="rep-img" />
+      </div>
+
+      <div class="row w-100">
+        <div class="col-lg-12 mx-auto">
+          <div class="career-search mb-60">
+            <div id="filter-result" class="filter-result">
+              <div
+                id="job-box"
+                class="job-box d-md-flex align-items-center justify-content-between mb-30"
+              >
+                <div
+                  class="job-left my-4 d-md-flex align-items-center flex-wrap"
+                >
+                  <div
+                    class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex"
+                  >
+                    <img class="h-50 w-50" src="img/favicon.png" alt="" />
+                  </div>
+                  <div class="job-content">
+                    <h5 id="li" class="text-center text-md-left">
+                      Test Name 1
+                    </h5>
+                    <span class="taghome tag-teal my-2">Sales Rep</span>
+                  </div>
                 </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="container">
-                <ul id="name-list" class="name-list">
-                    <li>name 1</li>
-                    <li>name 2</li>
-                    <li>name 3</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="container">
-            <img src="" alt="" id="rep-img" class="rep-img" />
-        </div>
-
-        <div class="row w-100">
-            <div class="col-lg-12 mx-auto">
-                <div class="career-search mb-60">
-                    <div id="filter-result" class="filter-result">
-                        <div id="job-box" class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                            <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                    <img class="h-50 w-50" src="img/favicon.png" alt="" />
-                                </div>
-                                <div class="job-content">
-                                    <h5 id="li" class="text-center text-md-left">
-                                        Test Name 1
-                                    </h5>
-                                    <span class="taghome tag-teal my-2">Sales Rep</span>
-                                </div>
-                            </div>
-                            <div class="job-right my-4 flex-shrink-0">
-                                <a href="cards.html" class="btn d-block w-100 d-sm-inline-block btn-light">Get Code</a
+                <div class="job-right my-4 flex-shrink-0">
+                  <a
+                    href="cards.html"
+                    class="btn d-block w-100 d-sm-inline-block btn-light"
+                    >Get Code</a
                   >
                 </div>
               </div>
@@ -160,12 +176,12 @@
                                 </li>
                                 </ul>
                                 </nav> -->
-                                <!-- END Pagination -->
-                            </div>
-                        </div>
-                    </div>
+          <!-- END Pagination -->
+        </div>
+      </div>
+    </div>
 
-                    <!-- <section class="cards-page">
+    <!-- <section class="cards-page">
       <div class="container">
         <div class="cardhome">
           <div class="card-header">
@@ -194,19 +210,22 @@
       </div>
     </section> -->
 
-                    <!-- <script src="script.js"></script> -->
-                    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
 
-                    <script src="test.js"></script>
-                    <script src="" async defer></script>
-                    <!-- <script src="test.js"></script> -->
-                    <div id="dbPagePayload"></div>
-                    <!-- <script lang="text/javascript">
+    <script src="test.js"></script>
+    <script src="" async defer></script>
+    <!-- <script src="test.js"></script> -->
+    <div id="dbPagePayload"></div>
+    <!-- <script lang="text/javascript">
 $.post("./target_dbid?a=API_GetRecordAsHTML&rid=n", {}, function(response){
 $("#dbPagePayload").html(response);
 });
 </script> -->
-                    <!-- <script src="test.js"></script> -->
-</body>
-
+    <!-- <script src="test.js"></script> -->
+  </body>
 </html>
