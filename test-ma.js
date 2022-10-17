@@ -10,7 +10,7 @@ var headers = {
 var body = {
     "from": "bsazkzsm2",
     "select": [
-        6, 15, 16, 17, 21, 42
+        6, 7, 15, 16, 17, 21, 42, 45
     ],
     "where": "{42.EX.'" + id + "'}"
 };
@@ -28,12 +28,21 @@ xmlHttp.onreadystatechange = function() {
         const response = JSON.parse(xmlHttp.response);
         if (response.data) {
             var item = response.data[0];
-            console.log();
             var name = (item[6].value) ? item[6].value.name : "";
             var email = (item[6].value) ? item[6].value.email : "";
             var image = (item[21].value) ? item[21].value : "";
             var phone = (item[17].value) ? item[17].value : "";
             var qrcode = (item[15].value) ? item[15].value : "";
+            if (item[7].value) {
+                document.getElementById("slaes_rep").innerHTML = item[7].value;
+                if (item[45].value == "Active") {
+                    document.getElementById("slaes_rep").style.background = "#35a0c7";
+                } else if (item[45].value == "Inactive") {
+                    document.getElementById("slaes_rep").style.background = "red";
+                }
+            } else {
+                document.getElementById("slaes_rep").style.display = "none";
+            }
 
             document.getElementById("rep-img").innerHTML = image;
             document.getElementById("rep-name").innerHTML = name;

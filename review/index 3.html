@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"><--![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Employee ID Card</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../c-style.css" />
+    <link rel="stylesheet" type="text/css" href="../util.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+
+<body class="mountain-background">
+    <section class="form-page">
+        <div class="container d-flex flex-column">
+            <div class="card">
+                <div id="rep-img" class="card-header">
+                    <img src="../img/lion-head.png" alt="rover" />
+                </div>
+
+                <div class="card-body">
+                    <span id="slaes_rep" class="tag tag-teal text-center h6">Sales Rep</span>
+                    <h4 id="rep-name" class="mt-2">
+                        Christian Dizon
+                    </h4>
+                    <div class="rating-sec d-flex flex-row">
+                        <div>
+                            <h6>Rep Rating</h6>
+                        </div>
+                        <form class="rating mt-2" id="testform" name="testform" method="POST" encType="multipart/form-data" action="https://gosales.quickbase.com/db/bsazkzsm2?act=API_AddRecord">
+
+                            <label>
+                    <input type="radio" name="stars" value="1" />
+                    <span class="icon">★</span>
+                  </label>
+                            <label>
+                    <input type="radio" name="stars" value="2" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                            <label>
+                    <input type="radio" name="stars" value="3" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>   
+                  </label>
+                            <label>
+                    <input type="radio" name="stars" value="4" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                            <label>
+                    <input type="radio" name="stars" value="5" />
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                    <span class="icon">★</span>
+                  </label>
+                    </div>
+                    <input type="hidden" id="rid" name="rid">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="email" required name="email" placeholder="example@mail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" class="form-control" id="name" required name="name" placeholder="Enter Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone</label>
+                        <input type="text" class="form-control" id="phone" required name="phone" placeholder="Enter Phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Comments</label>
+                        <textarea class="form-control" id="comments" required name="comments" rows="3" placeholder="Write Comments..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn tag-teal text-w">Submit</button>
+                        </div>
+                    </div>
+                    </form>
+                    <div class="m-auto pt-1">
+                        <img class="go-logo" src="../img/Go Sales logo_colour hor-edit.jpg" alt="user" />
+                    </div>
+
+                </div>
+    </section>
+
+    <!-- <script src="test-ma.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../form-submit.js"></script>
+
+    <script>
+        // const img = document.querySelector("img");
+        // $("#testform").on("submit", function(e) {
+        //     e.preventDefault();
+        //     var headers = {
+        //         "QB-Realm-Hostname": "gosales.quickbase.com",
+        //         // "User-Agent": "FileService_Integration_V2.1",
+        //         Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
+        //         "Content-Type": "application/json"
+        //     };
+
+        //     var body = {
+        //         from: "bsazkzsm2",
+        //         select: [6, 15, 17, 21],
+        //         // where: "{33.CT.'6789'}",
+        //         where: "{33.CT.'12345'}",
+        //         sortBy: [{
+        //             fieldId: 3,
+        //             order: "ASC"
+        //         }],
+        //         //   groupBy: [{ fieldId: 33, grouping: "equal-values" }],
+        //         options: {
+        //             skip: 0,
+        //             top: 0,
+        //             compareWithAppLocalTime: false
+        //         }
+        //     };
+        //     var url = $(this).attr('action');
+        //     var params = $(this).serialize();
+        //     console.log(params);
+
+        // })
+    </script>
+</body>
+
+</html>
+
+</html>
