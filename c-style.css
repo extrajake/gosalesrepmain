@@ -48,6 +48,10 @@ body {
   text-align: center;
 }
 
+.icon-w {
+  width: 48% !important;
+}
+
 .icon-row > i {
   width: 48%;
 }
