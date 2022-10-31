@@ -181,6 +181,9 @@ body {
   font-size: 20px;
 }
 
+.rating-sec {
+}
+
 .rating label {
   position: absolute;
   top: 0;
@@ -226,7 +229,7 @@ body {
 }
 
 .rating label:last-child .icon {
-  color: #000;
+  color: #ffc107;
 }
 
 .rating:not(:hover) label input:checked ~ .icon,
