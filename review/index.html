@@ -31,11 +31,12 @@
                     <h4 id="rep-name" class="mt-2">
 
                     </h4>
+                    <span id ="rid" class=""><small></small></span>
                     <div class="rating-sec mt-3 d-flex flex-column">
                         <div>
                             <h6>Give <span id="rating_name"></span> a rating</h6>
                         </div>
-                        <form class="rating mt-2" id="testform" name="testform" method="POST" encType="multipart/form-data" action="https://gosales.quickbase.com/db/bsazkzsm2?act=API_AddRecord">
+                        <form class="rating mt-2" id="testform" name="testform" method="POST" encType="multipart/form-data" action="https://gosales.quickbase.com/db/bsazkzsm2?act=API_AddRecord" >
 
                             <label>
                     <input type="radio" name="stars" value="1" />
@@ -67,6 +68,7 @@
                     <span class="icon">★</span>
                     <span class="icon">★</span>
                   </label>
+                  
                     </div>
                     <input type="hidden" id="rid" name="rid">
                     <div class="form-group">
