@@ -110,7 +110,7 @@ $("#testform").on("submit", function(e) {
           if (response.metadata.createdRecordIds[0]) {
             swal({
               title: "Success",
-              text: "You submit review successfully!",
+              text: "Review submitted successfully!",
               icon: "success"
             }).then(function(result) {
               location.reload(true);
