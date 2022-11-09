@@ -24,10 +24,11 @@ xmlHttp.onreadystatechange = function() {
   if (xmlHttp.readyState === XMLHttpRequest.DONE) {
     const response = JSON.parse(xmlHttp.response);
     if (response.data) {
+      console.log(response.data);
       var item = response.data[0];
       var name = item[6].value ? item[6].value.name : "";
       var image = item[21].value ? item[21].value : "";
-      var rid = item[33].value ? item[33].value : "";
+      var repid = item[33].value ? item[33].value : "";
       if (item[7].value) {
         document.getElementById("slaes_rep").innerHTML = item[7].value;
         if (item[45].value == "Active") {
@@ -42,18 +43,20 @@ xmlHttp.onreadystatechange = function() {
       document.getElementById("name").value = name;
       document.getElementById("rating_name").innerText = name;
       document.getElementById("rep-name").innerHTML = name;
-      document.getElementById("rid").innerHTML = rid;
+      document.getElementById("repid").value = repid;
     }
   }
 };
+
 xmlHttp.send(JSON.stringify(body));
 $("#testform").on("submit", function(e) {
   e.preventDefault();
+  console.log(e);
   var email = $("#email").val();
   var name = $("#name").val();
   var phone = $("#phone").val();
   var comments = $("#comments").val();
-  var rid = $("#rid").val();
+  var repid = $("#repid").val();
   var stars = $("input[name='stars']:checked").val();
   if (stars == null) {
     swal({
@@ -74,8 +77,8 @@ $("#testform").on("submit", function(e) {
           "7": {
             value: stars
           },
-          "8": {
-            value: comments
+          "14": {
+            value: repid
           },
           "9": {
             value: name
@@ -86,13 +89,14 @@ $("#testform").on("submit", function(e) {
           "11": {
             value: email
           },
-          "14": {
-            value: rid
+          "8": {
+            value: comments
           }
         }
       ],
       fieldsToReturn: [7]
     };
+
     xmlHttp.open("POST", "https://api.quickbase.com/v1/records", true);
     for (const key in headers) {
       xmlHttp.setRequestHeader(key, headers[key]);
@@ -101,6 +105,7 @@ $("#testform").on("submit", function(e) {
     xmlHttp.onreadystatechange = function() {
       if (xmlHttp.readyState === XMLHttpRequest.DONE) {
         const response = JSON.parse(xmlHttp.response);
+
         if (response.metadata) {
           if (response.metadata.createdRecordIds[0]) {
             swal({
