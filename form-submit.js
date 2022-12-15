@@ -9,7 +9,7 @@ var headers = {
 };
 var body = {
   from: "bsazkzsm2",
-  select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45],
+  select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45, 48],
   where: "{42.EX.'" + id + "'}"
 };
 
@@ -29,6 +29,9 @@ xmlHttp.onreadystatechange = function() {
       var name = item[6].value ? item[6].value.name : "";
       var image = item[21].value ? item[21].value : "";
       var repid = item[33].value ? item[33].value : "";
+      var avg = item[48].value ? item[48].value : "";
+      
+      console.log(typeof avg, repid);
       if (item[7].value) {
         document.getElementById("slaes_rep").innerHTML = item[7].value;
         if (item[45].value == "Active") {
@@ -43,6 +46,7 @@ xmlHttp.onreadystatechange = function() {
       document.getElementById("name").value = name;
       document.getElementById("rating_name").innerText = name;
       document.getElementById("rep-name").innerHTML = name;
+      document.getElementById("avg").innerHTML = avg;
       document.getElementById("repid").value = repid;
     }
   }

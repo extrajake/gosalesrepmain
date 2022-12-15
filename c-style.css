@@ -39,8 +39,14 @@ body {
   max-height: 60px;
   max-width: 150px;
 }
+
+.btn {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
 .btn-blue {
   background-color: #14a0c7;
+  
 }
 
 .qr-nav {
@@ -223,6 +229,14 @@ body {
   height: 500px;
   width: 500px;
 }
+
+.card-fields {
+  padding:0 15px;
+  margin:20px 0;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
+}
+
 
 .rating {
   display: inline-block;
