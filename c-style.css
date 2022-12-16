@@ -309,6 +309,11 @@ body {
   text-shadow: 0 0 5px #ffc107;
 }
 
+.avg-rating {
+  margin: 0 5px;
+  align-items: center;
+}
+
 .go-btn {
   box-shadow: 2px 2px 20px rgb(196 204 245 / 35%);
   color: #333333;
