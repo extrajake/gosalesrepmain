@@ -9,7 +9,7 @@ var headers = {
 };
 var body = {
   from: "bsazkzsm2",
-  select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45, 48],
+  select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45, 48, 49],
   where: "{42.EX.'" + id + "'}"
 };
 
@@ -30,6 +30,7 @@ xmlHttp.onreadystatechange = function() {
       var image = item[21].value ? item[21].value : "";
       var repid = item[33].value ? item[33].value : "";
       var avg = item[48].value ? item[48].value : "";
+      var fortyTwo = item[49].value ? item[49].value : "";
       
       console.log(typeof avg, repid);
       if (item[7].value) {
@@ -47,8 +48,11 @@ xmlHttp.onreadystatechange = function() {
       document.getElementById("rating_name").innerText = name;
       document.getElementById("rep-name").innerHTML = name;
       document.getElementById("avg").innerHTML = avg;
+      document.getElementById("avg").innerHTML = fortyTwo;
       document.getElementById("repid").value = repid;
     }
+    
+    
   }
 };
 
