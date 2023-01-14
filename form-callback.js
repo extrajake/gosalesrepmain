@@ -1,12 +1,14 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
+const API_KEY = "";
 var data = localStorage.getItem("data");
 var headers = {
   "QB-Realm-Hostname": "gosales.quickbase.com",
   Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
   "Content-Type": "application/json"
 };
+
 var body = {
   from: "bsazkzsm2",
   select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45, 48],
