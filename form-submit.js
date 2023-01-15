@@ -29,7 +29,7 @@ xmlHttp.onreadystatechange = function() {
       var name = item[6].value ? item[6].value.name : "";
       var image = item[21].value ? item[21].value : "";
       var repid = item[33].value ? item[33].value : "";
-      var avg = item[48].value ? item[48].value : "";
+      var avg = item[48].value ? item[48].value.toFixed(2) : "";
       var avgCopy = item[49].value ? item[49].value : "";
       
       console.log(typeof avg, repid);
@@ -48,7 +48,7 @@ xmlHttp.onreadystatechange = function() {
       document.getElementById("rating_name").innerText = name;
       document.getElementById("rep-name").innerHTML = name;
       document.getElementById("avg").innerHTML = avg;
-      document.getElementById("avg").innerHTML = avgCopy;
+      // document.getElementById("avg").innerHTML = avgCopy;
       document.getElementById("repid").value = repid;
     }
     
