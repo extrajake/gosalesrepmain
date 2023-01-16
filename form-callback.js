@@ -6,6 +6,7 @@ var data = localStorage.getItem("data");
 var headers = {
   "QB-Realm-Hostname": "gosales.quickbase.com",
   Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
+  "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
   "Content-Type": "application/json"
 };
 
