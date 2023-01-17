@@ -49,9 +49,51 @@ body {
   
 }
 
+.qr-code {
+  text-align: center;
+  padding:10px;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+.accordion .contentDB .label::before {
+  /* content: '+'; */
+  position: absolute;
+  right:10%;
+  transform: translateY(50%);
+  margin-top:-3%;
+}
+.accordion .contentDB.active .label .fa{
+transform:rotate(180deg);
+}
+
+div.label > span > i.active::before {
+transform:rotate(180deg);
+}
+
+.accordion .contentDB .label:hover {
+  color: #14a0c7;
+}
+
+.accordion .contentDB .qr-content {
+  position: relative;
+  height:0px;
+  overflow:hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+}
+
+.accordion .contentDB.active .qr-content {
+  height:200px;
+  overflow-y: hidden;
+}
+
 .qr-nav {
   width: 100%;
-  background: #d9d9d9;
+  background: transparent;
+
   margin: 20px auto;
   border-radius: 5px;
 }
