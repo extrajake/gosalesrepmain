@@ -1,7 +1,6 @@
-const accordion = document.getElementsByClassName('contentDB');
+const button = document.querySelector(".qrExt");
+const qrContent = document.querySelector('.qr-content');
 
-for (i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener('click', function(){
-        this.classList.toggle('active');
-    })
-}
+button.addEventListener('click', () => {
+    qrContent.classList.toggle('active');
+})
