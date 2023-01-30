@@ -6,10 +6,11 @@ html, body {
 }
 
 body {
-  position: relative;
+  /* position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: 0;
   box-sizing: border-box;
   background-color: #f7f8fc;
@@ -28,12 +29,32 @@ body {
   flex-wrap: wrap;
 }
 
+.navbar {
+  width:100%;
+  justify-content: center !important;
+}
+
+.navbar-brand {
+  text-align: center;
+}
+
+.nav-logo {
+  max-width: 30%;
+}
+
+@media (max-width: 480px) {
+  .nav-logo{
+    max-width: 80%;
+  }
+}
+
 .cards-page {
   margin-top: 5%;
 }
 .card {
-  margin: 10px;
-  margin-top: 40%;
+  margin: auto;
+  margin-top:10%;
+  margin-bottom:10%;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -47,6 +68,7 @@ body {
 
 .btn {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width:100%;
 }
 
 .btn-blue {
@@ -207,6 +229,9 @@ transform:rotate(180deg);
   padding: 20px;
   min-height: 250px;
 }
+.card-bottom {
+  margin-top: 30px;
+}
 
 .form-control:focus {
   border-color: #35a0c7;
@@ -294,7 +319,8 @@ transform:rotate(180deg);
 
 .card-fields {
   padding:0 15px;
-  margin:20px 0;
+  margin:10px 0;
+  margin-bottom: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 10px;
 }

@@ -19,6 +19,16 @@
 </head>
 
 <body class="mountain-background">
+    <header>
+        <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1 justify-content-center"><img class = "nav-logo" src="/img/TELUS-horizontal.png" alt=""></span>
+            <!-- <div class="TELUS_head"> -->
+              <img src="img/TELUS-horizontal.png" alt="">
+            
+          </nav>
+        </div>
+    </header>
     <section class="form-page">
         <div class="container d-flex flex-column">
             <div class="card">
@@ -34,6 +44,33 @@
                     <span class="icon">★</span><h5 id="avg" class='avg-rating'></h5>
                     <h6 id="avg" class='avg-rating'></h6>
                 </div>
+                    <div class="row mt-3">
+                        <div class="m-auto">Top 3 Reviews</div>
+                        <div class="reviewText" id ="reviewText"></div>
+                    </div>
+
+                    <script>
+                        function pullReviews (e) {
+                            e.preventDefault();
+
+                        fetch ('https://api.quickbase.com/v1/records/query'), {
+                            method: 'POST',
+                            headers: {'QB-Realm-Hostname': 'gosales.quickbase.com',
+                                    Authorization: 'b4zk43xsngt3xd7ximtbdbxycvc',
+                                    'QB-App-Token': 'b4zk43xsngt3xd7ximtbdbxycvc',
+                                    'Content-Type': 'application/json'
+                                },
+                            body: JSON.stringify({
+                                from2: "bsa26ztqb",
+                                select: [17],
+                                where: "{42.EX.'" + id + "'}"
+                            })
+                            .then((res) => res.json())
+                            .then((data) => console.log(data))
+                        }
+                        }
+                    </script>
+                
                     </div>
                     
 

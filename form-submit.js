@@ -2,6 +2,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 var data = localStorage.getItem("data");
+
+
 var headers = {
   "QB-Realm-Hostname": "gosales.quickbase.com",
   Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
@@ -10,9 +12,17 @@ var headers = {
 };
 var body = {
   from: "bsazkzsm2",
+  // from2: "bsa26ztqb",
   select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45, 48, 49],
   where: "{42.EX.'" + id + "'}"
 };
+
+// var body2 = {
+//   // from: "bsazkzsm2",
+//   from2: "bsa26ztqb",
+//   select: [17],
+//   where: "{42.EX.'" + id + "'}"
+// };
 
 const xmlHttp = new XMLHttpRequest();
 
@@ -28,6 +38,7 @@ xmlHttp.onreadystatechange = function() {
       console.log(response.data);
       var item = response.data[0];
       var name = item[6].value ? item[6].value.name : "";
+      // var rev = item[17].value ? item[17].value : "";
       var image = item[21].value ? item[21].value : "";
       var repid = item[33].value ? item[33].value : "";
       var avg = item[48].value ? item[48].value.toFixed(2) : "";
@@ -51,13 +62,38 @@ xmlHttp.onreadystatechange = function() {
       document.getElementById("avg").innerHTML = avg;
       // document.getElementById("avg").innerHTML = avgCopy;
       document.getElementById("repid").value = repid;
+      // document.getElementById("revTxt").value = rev;
     }
+    // console.log(rev)
     
     
   }
 };
 
+function pullReviews (e) {
+  e.preventDefault();
+
+fetch ('https://api.quickbase.com/v1/records/query'), {
+  method: 'POST',
+  headers: {'QB-Realm-Hostname': 'gosales.quickbase.com',
+          Authorization: 'b4zk43xsngt3xd7ximtbdbxycvc',
+          // 'QB-App-Token': 'b4zk43xsngt3xd7ximtbdbxycvc',
+          'Content-Type': 'application/json'
+      },
+  body: JSON.stringify({
+      from2: "bsa26ztqb",
+      select: [17],
+      where: "{42.EX.'" + id + "'}"
+  })
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+}
+}
+console.log (pullReviews);
+
+
 xmlHttp.send(JSON.stringify(body));
+
 $("#testform").on("submit", function(e) {
   e.preventDefault();
   console.log(e);
@@ -135,5 +171,6 @@ $("#testform").on("submit", function(e) {
       }
     };
     xmlHttp.send(JSON.stringify(body));
+    xmlHttp.send(JSON.stringify(body2));
   }
 });

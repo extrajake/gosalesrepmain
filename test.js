@@ -38,18 +38,14 @@ xmlHttp.onreadystatechange = function() {
                                 ${image}
                             </div>
                             <div class="job-content">
-                                <h5 class="text-center text-md-left">${name}</h5>
-                                <span class="taghome tag-teal my-2">${phone}</span>
-                                <div class="job-right my-4 flex-shrink-0">
-                                            <a
-                                                href="cards/?id=${id}"
-                                                class="btn d-block w-100 d-sm-inline-block btn-light"
-                                                >Go to ${name}</a
-                                            >
-                                </div>
+                            <h5 class="text-center text-md-left">${name}</h5>
+                            <span class="taghome tag-teal my-2">${phone}</span>
+                            <div class="job-right my-4 flex-shrink-0">
+                            <a href="cards/?id=${id}" class="btn d-block w-100 d-sm-inline-block btn-light">Go to ${name}</a>
+                            </div>
                             </div>
                         </div>
-                    `;
+                        `;
             }
 
         })
@@ -59,3 +55,4 @@ xmlHttp.onreadystatechange = function() {
     }
 };
 xmlHttp.send(JSON.stringify(body));
+
