@@ -3,3 +3,5 @@
   to = "http://agent.gosales.co"
   status = 301
   force = true
+
+[ new Dotenv({ systemvars: true }) ]
