@@ -4,4 +4,8 @@
   status = 301
   force = true
 
-[ new Dotenv({ systemvars: true }) ]
+  plugins: [
+    new Dotenv({
+        systemvars: true
+    })
+  ]
