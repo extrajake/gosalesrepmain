@@ -2,8 +2,9 @@
 
 var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",
-    "Authorization": "b4zk43xsngt3xd7ximtbdbxycvc",
-    "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
+    // "Authorization": "b4zk43xsngt3xd7ximtbdbxycvc",
+    // "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
+    "Authorization": `secretKey ${secretKey}`,
     "Content-Type": "application/json"
 };
 
