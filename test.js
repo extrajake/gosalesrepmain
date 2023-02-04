@@ -1,4 +1,4 @@
-
+var secretKey = "b4zk43xsngt3xd7ximtbdbxycvc";
 
 // let secretKey = process.env.secretKey;
 var headers = {
