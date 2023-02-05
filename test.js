@@ -1,4 +1,4 @@
-const secretKey = process.env.secretKey;
+const secretKey = "b4zk43xsngt3xd7ximtbdbxycvc";
 
 var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",
