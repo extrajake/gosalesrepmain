@@ -33,6 +33,9 @@ body {
   width:100%;
   justify-content: center !important;
 }
+.textc {
+  text-align: center;
+}
 
 .navbar-brand {
   text-align: center;
