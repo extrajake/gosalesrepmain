@@ -75,10 +75,49 @@
                 </div>
     </section>
 
+    <script>
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get("id");
+var data = localStorage.getItem("data");
+
+var headers = {
+  	'QB-Realm-Hostname': 'gosales.quickbase.com',
+	// 'User-Agent': '{User-Agent}',
+	'Authorization': 'QB-USER-TOKEN b4zk43xsngt3xd7ximtbdbxycvc',
+    'Content-Type': 'application/json'
+}
+var body = {
+  from: "bsa26ztqb",
+  select: [3, 6, 7, 8, 15, 16, 17, 21, 33, 42, 45, 48, 49],
+  where: "{42.EX.'" + id + "'}"
+};
+
+
+const xmlHttp = new XMLHttpRequest();
+xmlHttp.open('POST', 'https://api.quickbase.com/v1/records/query', true);
+for (const key in headers) {
+  xmlHttp.setRequestHeader(key, headers[key]);
+}
+xmlHttp.onreadystatechange = function() {
+  if (xmlHttp.readyState === XMLHttpRequest.DONE) {
+    // console.log(xmlHttp.responseText);
+    const response = JSON.parse(xmlHttp.response);
+    console.log(response);
+  }
+};
+
+xmlHttp.send();
+
+
+
+    </script>
+
     <!-- <script src="test-ma.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../form-submit.js"></script>
+    <!-- <script src="../form-submit.js"></script> -->
 
     <script>
         // const img = document.querySelector("img");
