@@ -1,4 +1,6 @@
-const secretKey = SECRET_KEY;
+require("dotenv").config();
+
+const secretKey = process.env.SECRET_KEY;
 
 var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",

@@ -1,6 +1,7 @@
-const API_KEY = "b4zk43xsngt3xd7ximtbdbxycvc";
+require("dotenv").config();
 
-export default API_KEY;
+console.log(process.env.SECRET_KEY);
+
 // var headers = {
 //     "QB-Realm-Hostname": "gosales.quickbase.com",
 //     "Authorization": "b4zk43xsngt3xd7ximtbdbxycvc",
