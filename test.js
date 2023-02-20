@@ -1,8 +1,8 @@
-// const secretKey = "b4zk43xsngt3xd7ximtbdbxycvc";
+const secretKey = "b4zk43xsngt3xd7ximtbdbxycvc";
 // require("dotenv").config();
 
-var secretKey = process.env.SECRET_KEY;
-console.log(secretKey);
+// var secretKey = process.env.SECRET_KEY;
+// console.log(secretKey);
 
 var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",
