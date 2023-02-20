@@ -1,4 +1,4 @@
-
+require("dotenv").config(".env");
 
 const secretKey = process.env.SECRET_KEY;
 
