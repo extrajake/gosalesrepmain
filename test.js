@@ -1,5 +1,5 @@
 // require("dotenv").config(".env");
-const secretKey = SECRET_KEY;
+// const secretKey = SECRET_KEY;
 // const secretKey = process.env.SECRET_KEY;
 
 var headers = {
