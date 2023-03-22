@@ -1,13 +1,16 @@
+var netlify = require('./functions/netlifyEnv'); 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 var data = localStorage.getItem("data");
+let apptoken = await netlify.getToken("jlacouvee", "APPTOKEN")
+let usertoken = await  netlify.getToken("jlacouvee", "USERTOKEN")
 var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",
-    Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
-    "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
-    "Content-Type": "application/json"
-};
+    Authorization: "QB-USER-TOKEN " + usertoken,
+    "QB-APP-TOKEN":  apptoken,
+    "Content-Type": "application/json",
+  };
 var body = {
     from: "bsazkzsm2",
     select: [6, 7, 15, 16, 17, 21, 34, 42, 45, 48],

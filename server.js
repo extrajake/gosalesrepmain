@@ -1,39 +1,42 @@
-require('dotenv').config()
-console.log(process.env)
+require("dotenv").config();
+var netlify = require('./functions/netlifyEnv'); 
+// console.log(process.env);
 
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/agents', async (req, res) => {
-    console.log({ fetch})
-  res.send('hello world')
+app.get("/agents", async (req, res) => {
+  console.log({ fetch });
+  let apptoken = await netlify.getToken("jlacouvee", "APPTOKEN")
+  let usertoken = await  netlify.getToken("jlacouvee", "USERTOKEN")
+  console.log(usertoken, apptoken)
   const response = await fetch("https://api.quickbase.com/v1/records/query", {
-    method: 'POST',
+    method: "POST",
     headers: {
-        "QB-Realm-Hostname": "gosales.quickbase.com",
-        "Authorization": "b4zk43xsngt3xd7ximtbdbxycvc",
-        "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
-        "Content-Type": "application/json"
+      "QB-Realm-Hostname": "gosales.quickbase.com",
+      Authorization: "QB-USER-TOKEN " + usertoken,
+      "QB-APP-TOKEN":  apptoken,
+      "Content-Type": "application/json",
     },
-    body: {
-        from: "bsazkzsm2",
-        select: [6, 15, 16, 17, 21],
-        sortBy: [{ fieldId: 3, order: "ASC" }],
-        options: { skip: 0, top: 0, compareWithAppLocalTime: false }
-    }
-  })
+    body: JSON.stringify({
+      from: "bsazkzsm2",
+      select: [6, 15, 16, 17, 21],
+      sortBy: [{ fieldId: 3, order: "ASC" }],
+      options: { skip: 0, top: 0, compareWithAppLocalTime: false },
+    }),
+  });
+  // console.log(await response.text())
+  const agent = await response.json();
 
-  const agent = await response.json()
+  res.send(agent);
+});
 
-  res.send(agent)
-})
-
-const port = 8080
+const port = 3000;
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
+  console.log(`Example app listening on port ${port}`);
+});
 
 // var headers = {
 //     "QB-Realm-Hostname": "gosales.quickbase.com",
@@ -88,7 +91,6 @@ app.listen(port, () => {
 //             }
 
 //         })
-
 
 //         document.getElementById("filter-result").innerHTML = html;
 //     }
