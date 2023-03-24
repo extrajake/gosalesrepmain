@@ -1,16 +1,18 @@
-const secretKey = "b4zk43xsngt3xd7ximtbdbxycvc";
+var netlify = require('./functions/netlifyEnv'); 
 // require("dotenv").config();
 
 // var secretKey = process.env.SECRET_KEY;
 // console.log(secretKey);
 
-var headers = {
+let apptoken = await netlify.getToken("jlacouvee", "APPTOKEN")
+let usertoken = await  netlify.getToken("jlacouvee", "USERTOKEN")
+
+var headers= {
     "QB-Realm-Hostname": "gosales.quickbase.com",
-    // "Authorization": "b4zk43xsngt3xd7ximtbdbxycvc",
-    // "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
-    "Authorization": `secretKey ${secretKey}`,
-    "Content-Type": "application/json"
-};
+    Authorization: "QB-USER-TOKEN " + usertoken,
+    "QB-APP-TOKEN":  apptoken,
+    "Content-Type": "application/json",
+  }
 
 var body = {
     from: "bsazkzsm2",
