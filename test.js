@@ -1,12 +1,29 @@
-var netlify = require("./functions/netlifyEnv");
+// var netlify = require("./functions/netlifyEnv");
+
+import { token } from "./functions/netlifyEnv.js";
 // require("dotenv").config();
 
 // var secretKey = process.env.SECRET_KEY;
 // console.log(secretKey);
 
+const getToken = async (account_id, key) => {
+    const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env/${key}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "User-Agent": "MyApp - narjune131@gmail.com",
+        Authorization: "Bearer " + token,
+      },
+    });
+    const json = await response.json();
+    const value = json.values[0].value;
+    return value;
+  };
+
 let render = async () => {
-  let apptoken = await netlify.getToken("jlacouvee", "APPTOKEN");
-  let usertoken = await netlify.getToken("jlacouvee", "USERTOKEN");
+  let apptoken = await getToken("jlacouvee", "APPTOKEN");
+  let usertoken = await getToken("jlacouvee", "USERTOKEN");
+
 
   var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",
