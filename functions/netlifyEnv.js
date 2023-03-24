@@ -1,4 +1,4 @@
-exports.getToken = async (account_id, key) => {
+const getToken = async (account_id, key) => {
     const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env/${key}`
     const response = await fetch(url, {
       method: "GET",
@@ -12,7 +12,7 @@ exports.getToken = async (account_id, key) => {
     return value
   }
   
-exports.createToken = async (account_id, key, scopes, id, value, context) => {
+const createToken = async (account_id, key, scopes, id, value, context) => {
     const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env`
     const response = await fetch(url, {
       method: "POST",
@@ -38,3 +38,4 @@ exports.createToken = async (account_id, key, scopes, id, value, context) => {
     })
     console.log(await response.text())
   }
+  module.exports = { getToken, createToken };
