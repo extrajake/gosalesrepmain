@@ -1,46 +1,49 @@
-var netlify = require('./functions/netlifyEnv'); 
+var netlify = require("./functions/netlifyEnv");
 // require("dotenv").config();
 
 // var secretKey = process.env.SECRET_KEY;
 // console.log(secretKey);
 
-let apptoken = await netlify.getToken("jlacouvee", "APPTOKEN")
-let usertoken = await  netlify.getToken("jlacouvee", "USERTOKEN")
+let render = async () => {
+  let apptoken = await netlify.getToken("jlacouvee", "APPTOKEN");
+  let usertoken = await netlify.getToken("jlacouvee", "USERTOKEN");
 
-var headers= {
+  var headers = {
     "QB-Realm-Hostname": "gosales.quickbase.com",
     Authorization: "QB-USER-TOKEN " + usertoken,
-    "QB-APP-TOKEN":  apptoken,
+    "QB-APP-TOKEN": apptoken,
     "Content-Type": "application/json",
-  }
+  };
 
-var body = {
+  var body = {
     from: "bsazkzsm2",
     select: [6, 15, 16, 17, 21],
     sortBy: [{ fieldId: 3, order: "ASC" }],
-    options: { skip: 0, top: 0, compareWithAppLocalTime: false }
-};
+    options: { skip: 0, top: 0, compareWithAppLocalTime: false },
+  };
 
-const xmlHttp = new XMLHttpRequest();
-xmlHttp.open("POST", "https://api.quickbase.com/v1/records/query", true);
+  const xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("POST", "https://api.quickbase.com/v1/records/query", true);
 
-for (const key in headers) {
+  for (const key in headers) {
     xmlHttp.setRequestHeader(key, headers[key]);
-}
+  }
 
-xmlHttp.onreadystatechange = function() {
+  xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState === XMLHttpRequest.DONE) {
-        const response = JSON.parse(xmlHttp.response);
-        var html = "";
-        response.data.forEach(item => {
-            if ((item[6].value)) {
-                var id = (item[6].value) ? item[6].value.id : (new Date()).getTime().toString();
-                var name = (item[6].value) ? item[6].value.name : "";
-                var email = (item[6].value) ? item[6].value.email : "";
-                var image = (item[21].value) ? item[21].value : "";
-                var phone = (item[17].value) ? item[17].value : "";
-                var qrcode = (item[15].value) ? item[15].value : "";
-                html += `<div class="row flex-row p-3">
+      const response = JSON.parse(xmlHttp.response);
+      var html = "";
+      response.data.forEach((item) => {
+        if (item[6].value) {
+          var id = item[6].value
+            ? item[6].value.id
+            : new Date().getTime().toString();
+          var name = item[6].value ? item[6].value.name : "";
+          var email = item[6].value ? item[6].value.email : "";
+          var image = item[21].value ? item[21].value : "";
+          var phone = item[17].value ? item[17].value : "";
+          var qrcode = item[15].value ? item[15].value : "";
+          html += `<div class="row flex-row p-3">
                             <div class="job-box img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
                                 ${image}
                             </div>
@@ -53,13 +56,12 @@ xmlHttp.onreadystatechange = function() {
                             </div>
                         </div>
                         `;
-            }
+        }
+      });
 
-        })
-
-
-        document.getElementById("filter-result").innerHTML = html;
+      document.getElementById("filter-result").innerHTML = html;
     }
-};
-xmlHttp.send(JSON.stringify(body));
-
+  };
+  xmlHttp.send(JSON.stringify(body));
+}
+render();
