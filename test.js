@@ -1,6 +1,4 @@
-// var netlify = require("./functions/netlifyEnv");
-
-import { token } from "./functions/netlifyEnv.js";
+import {token} from './functions/netlifyEnv.js';
 // require("dotenv").config();
 
 // var secretKey = process.env.SECRET_KEY;
