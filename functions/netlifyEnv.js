@@ -24,6 +24,6 @@ const createToken = async (account_id, key, scopes, id, value, context) => {
   console.log(await response.text());
 };
 
-export default const token = "casj_4NnH8-YLRp2kAaMrt39Ihg93dj8-2tRVDjbxds"
+export const token = "casj_4NnH8-YLRp2kAaMrt39Ihg93dj8-2tRVDjbxds"
 
 // module.exports = { getToken, createToken };
