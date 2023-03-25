@@ -45,6 +45,7 @@ const render = async () => {
         if (xmlHttp.readyState === XMLHttpRequest.DONE) {
             const response = JSON.parse(xmlHttp.response);
             if (response.data) {
+                console.log(response.data)
                 var item = response.data[0];
                 var name = item[6].value ? item[6].value.name : "";
                 var email = item[6].value ? item[6].value.email : "";
