@@ -33,8 +33,8 @@ let render = async () => {
   var body = {
     from: "bsazkzsm2",
     select: [6, 15, 16, 17, 21],
-    sortBy: [{ fieldId: 3, order: "ASC" }],
-    options: { skip: 0, top: 0, compareWithAppLocalTime: false },
+    // sortBy: [{ fieldId: 3, order: "ASC" }],
+    // options: { skip: 0, top: 0, compareWithAppLocalTime: false },
   };
 
   const xmlHttp = new XMLHttpRequest();
