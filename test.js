@@ -38,7 +38,7 @@ let render = async () => {
   };
 
   const xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("POST", "https://api.quickbase.com/v1/records/query", true);
+  xmlHttp.open("POST", "https://api.quickbase.com/v1/records", true);
 
   for (const key in headers) {
     xmlHttp.setRequestHeader(key, headers[key]);
