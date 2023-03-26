@@ -7,7 +7,7 @@ import {token} from './functions/netlifyEnv.js';
 const getToken = async (account_id, key) => {
     const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env/${key}`;
     const response = await fetch(url, {
-      method: "GET",
+      method: "POST",
       headers: {
         "User-Agent": "MyApp - narjune131@gmail.com",
         Authorization: "Bearer " + token,
