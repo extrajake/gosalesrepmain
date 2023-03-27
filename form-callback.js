@@ -62,9 +62,6 @@ $("#testform").on("submit", function(e) {
         "8": {
           value: email
         },
-        "9": {
-          value: phone
-        },
         "15": {
           value: rid
         }
