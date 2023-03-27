@@ -33,6 +33,7 @@ const render = async () => {
         select: [6, 7, 15, 16, 17, 21, 34, 42, 45, 48],
         where: "{42.EX.'" + id + "'}"
     };
+    console.log(body);
     
     const xmlHttp = new XMLHttpRequest();
     
@@ -59,7 +60,7 @@ const render = async () => {
                     if (item[45].value == "Active") {
                         document.getElementById("slaes_rep").style.background = "#35a0c7";
                     } else if (item[45].value == "Inactive") {
-                        document.getElementById("slaes_rep").style.background = "red";
+                        document.getElementById("slaes_rep").innerHTML = "Agent Inactive";
                     }
                 } else {
                     document.getElementById("slaes_rep").style.display = "none";
