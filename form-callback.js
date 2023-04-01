@@ -1,14 +1,49 @@
+import {token} from './functions/netlifyEnv.js';
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
 const API_KEY = "";
 var data = localStorage.getItem("data");
-var headers = {
-  "QB-Realm-Hostname": "gosales.quickbase.com",
-  Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
-  "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
-  "Content-Type": "application/json"
-};
+
+
+// require("dotenv").config();
+
+// var secretKey = process.env.SECRET_KEY;
+// console.log(secretKey);
+
+const getToken = async (account_id, key) => {
+    const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env/${key}`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "User-Agent": "MyApp - narjune131@gmail.com",
+        Authorization: "Bearer " + token,
+      },
+    });
+    const json = await response.json();
+    const value = json.values[0].value;
+    return value;
+  };
+
+  let render = async () => {
+    let apptoken = await getToken("jlacouvee", "APPTOKEN");
+    let usertoken = await getToken("jlacouvee", "USERTOKEN");
+  
+  
+    var headers = {
+      "QB-Realm-Hostname": "gosales.quickbase.com",
+      Authorization: "QB-USER-TOKEN " + usertoken,
+      "QB-APP-TOKEN": apptoken,
+      "Content-Type": "application/json",
+    };
+
+
+// var headers = {
+//   "QB-Realm-Hostname": "gosales.quickbase.com",
+//   Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
+//   "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
+//   "Content-Type": "application/json"
+// };
 
 var body = {
   from: "bsazkzsm2",
@@ -98,3 +133,6 @@ $("#testform").on("submit", function(e) {
   };
   xmlHttp.send(JSON.stringify(body));
 });
+
+}
+render();

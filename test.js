@@ -30,19 +30,25 @@ let render = async () => {
     "Content-Type": "application/json",
   };
 
+  console.log(headers);
+
   var body = {
     from: "bsazkzsm2",
-    select: [6, 15, 16, 17, 21],
+    select: [6, 15, 16, 17, 21, 22],
     // sortBy: [{ fieldId: 3, order: "ASC" }],
     // options: { skip: 0, top: 0, compareWithAppLocalTime: false },
   };
 
   const xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", "https://api.quickbase.com/v1/records/query", true);
+  // xmlHttp.open("POST", "https://api.quickbase.com/v1/files/bsazkzsm2/1/22/0", true);
 
   for (const key in headers) {
     xmlHttp.setRequestHeader(key, headers[key]);
   }
+
+  // https://api.quickbase.com/v1 + /files/bsazkzsm2/1/22/1
+
 
   xmlHttp.onreadystatechange = function () {
     if (xmlHttp.readyState === XMLHttpRequest.DONE) {
@@ -55,9 +61,10 @@ let render = async () => {
             : new Date().getTime().toString();
           var name = item[6].value ? item[6].value.name : "";
           var email = item[6].value ? item[6].value.email : "";
-          var image = item[21].value ? item[21].value : "";
+          var image = item[22].value ? item[22].value : "";
           var phone = item[17].value ? item[17].value : "";
           var qrcode = item[15].value ? item[15].value : "";
+          console.log(image);
           html += `<div class="row flex-row p-3">
                             <div class="job-box img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
                                 ${image}
