@@ -221,6 +221,7 @@ $("#testform").on("submit", function(e) {
     e.preventDefault();
     var email = $("#email").val();
     var name = $("#name").val();
+    var lastname = $("#last-name").val();
     var phone = $("#phone").val();
     var comments = $("#comments").val();
     var repid = $("#repid").val();
@@ -248,6 +249,9 @@ $("#testform").on("submit", function(e) {
                 },
                 "9": {
                     value: name
+                },
+                "18": {
+                    value: lastname
                 },
                 "10": {
                     value: phone
