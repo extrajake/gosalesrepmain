@@ -71,7 +71,7 @@ xmlHttp.onreadystatechange = function() {
                 if (item[45].value == "Active") {
                     document.getElementById("slaes_rep").style.background = "#35a0c7";
                 } else if (item[45].value == "Inactive") {
-                    document.getElementById("slaes_rep").style.background = "red";
+                    document.getElementById("slaes_rep").innerHTML = "Agent Inactive";
                 }
             } else {
                 document.getElementById("slaes_rep").style.display = "none";
@@ -293,5 +293,6 @@ $("#testform").on("submit", function(e) {
 
     }
 });
+
   }
   render()

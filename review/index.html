@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../util.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body class="mountain-background">
@@ -45,10 +46,41 @@
                             <h5 id="avg" class='avg-rating'></h5>
                         </div>
                     </div>
-                    <div class="card-fields text-center last_reivew_box" style="display: none;">
-                        <h5 class="mt-3 latest-reviews">Latest Review</h5>
-                        <div id="latest-review" class="quote mt-2 last_review_comment"><span>"</span>review-quote lorem ipsum dolor sit amet consectetur adipisicing.<span>"</span></div>
-                        <div id="customer" class="customer my-2"><span id="customer_name">  </span></div>
+                    <div class="card-fields text-center last_reivew_box" style="">
+                        <h5 class="mt-3 latest-reviews">Latest Reviews</h5>
+                        <!-- <div id="latest-review" class="quote mt-2 last_review_comment"><span>"</span>review-quote lorem ipsum dolor sit amet consectetur adipisicing.<span>"</span></div>
+                        <div id="customer" class="customer my-2"><span id="customer_name">  </span></div> -->
+                        <input type="radio" name="slide-trigger" value="first" id="first" checked />
+                        <input type="radio" name="slide-trigger" value="second" id="second" />
+                        <input type="radio" name="slide-trigger" value="third" id="third" />
+                        <input type="radio" name="slide-trigger" value="fourth" id="fourth" />
+                        <div id="slider">
+                            <div id="slider-inner">
+                              <div id="second-slide" class="slide">
+                                <label for="first"></label>
+                                <div id="latest-review" class="quote mt-2 last_review_comment"><span>"</span>review-quote lorem ipsum dolor sit amet consectetur adipisicing.<span>"</span></div>
+                                <div id="customer" class="customer my-2"><span id="customer_name">  </span></div>
+                                <label for="third">></label>
+                              </div>
+                              <div id="third-slide" class="slide">
+                                <label for="second"></label>
+                                <div id="latest-review" class="quote mt-2 last_review_comment"><span>"</span>review-quote lorem ipsum dolor sit amet consectetur adipisicing.<span>"</span></div>
+                                <div id="customer" class="customer my-2"><span id="customer_name">  </span></div>
+                                <label for="fourth">></label>
+                              </div>
+                              <div id="fourth-slide" class="slide">
+                                <label for="third">></label>
+                                <div id="latest-review" class="quote mt-2 last_review_comment"><span>"</span>review-quote lorem ipsum dolor sit amet consectetur adipisicing.<span>"</span></div>
+                                <div id="customer" class="customer my-2"><span id="customer_name">  </span></div>
+                                <label for="first">></label>
+                              </div>
+                            </div>
+                          </div>
+                            
+                        
+
+                     
+
                     </div>
                     <div class="card-fields pb-2 other_review_section" style="display:none">
                         <h5 class="my-3 text-center">Other Reviews</h5>

@@ -47,7 +47,7 @@ const getToken = async (account_id, key) => {
 
 var body = {
   from: "bsazkzsm2",
-  select: [3, 6, 7, 15, 16, 17, 21, 33, 42, 45, 48],
+  select: [3, 6, 7, 15, 16, 17, 21, 22, 33, 42, 45, 48],
   where: "{42.EX.'" + id + "'}"
 };
 
