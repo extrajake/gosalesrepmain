@@ -99,6 +99,9 @@ $("#testform").on("submit", function(e) {
         },
         "15": {
           value: rid
+        },
+        "21": {
+          value: comments
         }
       }
     ],

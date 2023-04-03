@@ -114,7 +114,7 @@ xmlHttp.onreadystatechange = function() {
                             $(".last_review_comment").html(customer_html);
                             $("#customer_name").text(response.data[0][9]['value']);
                             var html = "";
-                            for (i = 1; i < response.data.length; i++) {
+                            for (var i = 0; i < response.data.length; i++) {
                                 html += '<div class="row py-1" style="border-bottom:1px solid #eee">';
                                 html += '<div class="col-8">' + response.data[i][9]['value'] + '</div>';
                                 html += '<div class="col-4 text-right">';
