@@ -1,3 +1,4 @@
+import { spawn } from 'child_process';
 import {token} from './functions/netlifyEnv.js';
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -114,18 +115,21 @@ xmlHttp.onreadystatechange = function() {
                             $(".last_review_comment").html(customer_html);
                             $("#customer_name").text(response.data[0][9]['value']);
                             var html = "";
-                            for (var i = 0; i < response.data.length; i++) {
-                                html += '<div class="row py-1" style="border-bottom:1px solid #eee">';
-                                html += '<div class="col-8">' + response.data[i][9]['value'] + '</div>';
-                                html += '<div class="col-4 text-right">';
-                                html += '<small style="font-style: italic;color: gray;">' + response.data[i][6]['value'] + '</small>';
-                                html += '</div>';
-                                html += '<div class="col-md-12" style="color: gray;">&ldquo;' + response.data[i][8]['value'] + '&rdquo;</div>';
-                                html += '</div>';
-                            }
-                            if (html) {
-                                $("#other_review_box").html(html);
-                            }
+                                for (var i = 0; i < response.data.length; i++) {
+                                    html += '<div class="row py-1" style="border-bottom:1px solid #eee">';
+                                    html += '<div class="col-8">' + response.data[i][9]['value'] + '</div>';
+                                    html += '<div class="col-4 text-right">';
+                                    html += '<small style="font-style: italic;color: gray;">' + response.data[i][6]['value'] + '</small>';
+                                    html += '</div>';
+                                    html += '<div class="col-md-12" style="color: gray;">&ldquo;' + response.data[i][8]['value'] + '&rdquo;</div>';
+                                    html += '</div>';
+                                }
+                                if (html) {
+                                    $(".other_review_section").show();
+                                    $("#other_review_box").html(html);
+                                } else {
+                                    $(".other_review_box").hide();
+                                }
                         }
 
                     }
