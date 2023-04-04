@@ -107,7 +107,7 @@ xmlHttp.onreadystatechange = function() {
                 if (xmlHttp3.readyState === XMLHttpRequest.DONE) {
                     const response = JSON.parse(xmlHttp3.response);
                     if (response.data) {
-                        console.log(response.data);
+                        // console.log(response.data);
                         if (response.data.length > 0) {
                             $(".last_reivew_box").show();
                             var customer_html = '<span>&ldquo;</span>' + response.data[0][8]['value'] + '<span>&rdquo;</span>';

@@ -1,8 +1,4 @@
 import {token} from './functions/netlifyEnv.js';
-// require("dotenv").config();
-
-// var secretKey = process.env.SECRET_KEY;
-// console.log(secretKey);
 
 const getToken = async (account_id, key) => {
     const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env/${key}`;
@@ -29,8 +25,6 @@ let render = async () => {
     "QB-APP-TOKEN": apptoken,
     "Content-Type": "application/json",
   };
-
-  console.log(headers);
 
   var body = {
     from: "bsazkzsm2",
@@ -64,7 +58,7 @@ let render = async () => {
           var image = item[22].value ? item[22].value : "";
           var phone = item[17].value ? item[17].value : "";
           var qrcode = item[15].value ? item[15].value : "";
-          console.log(image);
+          // console.log(image);
           html += `<div class="row flex-row p-3">
                             <div class="job-box img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
                                 ${image}

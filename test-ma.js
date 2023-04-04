@@ -27,13 +27,13 @@ const render = async () => {
         "QB-APP-TOKEN":  apptoken,
         "Content-Type": "application/json",
       };
-    console.log(headers)
+    // console.log(headers)
     var body = {
         from: "bsazkzsm2",
         select: [6, 7, 15, 16, 17, 21, 34, 42, 45, 48],
         where: "{42.EX.'" + id + "'}"
     };
-    console.log(body);
+    // console.log(body);
     
     const xmlHttp = new XMLHttpRequest();
     
