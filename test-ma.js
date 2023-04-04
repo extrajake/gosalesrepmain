@@ -61,6 +61,10 @@ const render = async () => {
                         document.getElementById("slaes_rep").style.background = "#35a0c7";
                     } else if (item[45].value == "Inactive") {
                         document.getElementById("slaes_rep").innerHTML = "Agent Inactive";
+                        document.getElementById("rep-img").style = "filter:blur(5px);opacity:75%;"
+                        document.getElementById("agent-inactive").innerHTML = "Agent Inactive";
+                        document.getElementById("agent-inactive").style = "padding:12px;";
+
                     }
                 } else {
                     document.getElementById("slaes_rep").style.display = "none";

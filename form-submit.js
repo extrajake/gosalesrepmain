@@ -117,11 +117,10 @@ xmlHttp.onreadystatechange = function() {
                                 for (var i = 0; i < response.data.length; i++) {
                                     html += '<div class="row py-1" style="border-bottom:1px solid #eee">';
                                     html += '<div class="col-md-12" style="color: black">&ldquo;' + response.data[i][8]['value'] + '&rdquo;</div>';
+                                    html += '<div class="col-8" style="color: grey;font-size: 0.9rem;">' + response.data[i][9]['value'] + '</div>';
                                     html += '<div class="col-4 text-right">';
-                                    // html += '<small style="font-style: italic;color: gray;">' + response.data[i][6]['value'] + '</small>';
+                                    html += '<small style="font-style: italic;color: gray;">' + response.data[i][6]['value'] + '</small>';
                                     html += '</div>';
-                                   
-                                    html += '<div class="col-8" style="color: grey">' + response.data[i][9]['value'] + '</div>';
                                     html += '</div>';
                                 }
                                 if (html) {

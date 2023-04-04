@@ -161,6 +161,18 @@ transform:rotate(180deg);
   right: 10%;
   content: "+";
 }
+#agent-inactive {
+  content:"";
+  background-color: white;
+  color: red;
+  width: 100%;
+  border-radius: 5px 0 0 0;
+  text-align: center;
+  z-index: 1;
+  margin: auto;
+  font-size: 1.3rem;
+  position: absolute;
+}
 
 #touch {
   position: absolute;
@@ -313,11 +325,16 @@ transform:rotate(180deg);
 }
 
 .card-fields {
+  overflow: scroll;
   padding:0 15px;
   margin:10px 0;
   margin-bottom: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 10px;
+}
+
+.other_review_section {
+  max-height: 240px;
 }
 
 
