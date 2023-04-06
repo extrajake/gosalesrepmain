@@ -69,7 +69,7 @@ xmlHttp.onreadystatechange = function() {
             if (item[7].value) {
                 document.getElementById("slaes_rep").innerHTML = item[7].value;
                 if (item[45].value == "Active") {
-                    document.getElementById("slaes_rep").style.background = "#35a0c7";
+                    document.getElementById("slaes_rep").style.background = "";
                 } else if (item[45].value == "Inactive") {
                     document.getElementById("slaes_rep").innerHTML = "Agent Inactive";
                 }
