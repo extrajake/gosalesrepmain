@@ -5,6 +5,8 @@ const id = urlParams.get("id");
 const API_KEY = "";
 var data = localStorage.getItem("data");
 
+console.log(id);
+
 
 // require("dotenv").config();
 
@@ -126,7 +128,7 @@ $("#testform").on("submit", function(e) {
             icon: "success"
           }).then(function(result) {
             // location.reload(true);
-            window.location.href = 'https://gosales.co';
+            window.location.href = "https://agent.gosales.co/cards/?id=" + id;
           });
         }
       } else {
