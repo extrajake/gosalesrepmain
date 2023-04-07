@@ -125,7 +125,8 @@ $("#testform").on("submit", function(e) {
             text: "Thanks, your agent will call you back shortly",
             icon: "success"
           }).then(function(result) {
-            location.reload(true);
+            // location.reload(true);
+            window.location.href = 'https://gosales.co';
           });
         }
       } else {
