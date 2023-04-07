@@ -169,13 +169,13 @@ xmlHttp2.onreadystatechange = function() {
     if (xmlHttp2.readyState === XMLHttpRequest.DONE) {
 
         const response = JSON.parse(xmlHttp2.response);
+        
 
         if (response.data) {
             console.log(xmlHttp2.response);
             var item2 = response.data[0];
             var name2 = item2[6].value ? item2[6].value.name2 : "";
             document.getElementById("latest-review").innerHTML = name2;
-
         }
     }
 };

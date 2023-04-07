@@ -68,7 +68,7 @@ xmlHttp.onreadystatechange = function() {
       var rid = item[33].value ? item[33].value : "";
       document.getElementById("rid").value = rid;
       document.getElementById("rep-img").innerHTML = image;
-      document.getElementById("name").value = name;
+      // document.getElementById("name").value = name;
       document.getElementById("rep-name").innerHTML = name;
       console.log(typeof rid);
     }
