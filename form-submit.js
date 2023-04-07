@@ -284,7 +284,8 @@ $("#testform").on("submit", function(e) {
                             text: "Review submitted successfully!",
                             icon: "success"
                         }).then(function(result) {
-                            location.reload(true);
+                            // location.reload(true);
+                            window.location.href = 'https://gosales.co';
                         });
                     }
                 } else {
