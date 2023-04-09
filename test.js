@@ -59,19 +59,19 @@ let render = async () => {
           var phone = item[17].value ? item[17].value : "";
           var qrcode = item[15].value ? item[15].value : "";
           // console.log(image);
-          html += `<div class="row flex-row p-3">
-                            <div class="job-box img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                ${image}
-                            </div>
-                            <div class="job-content">
-                            <h5 class="text-center text-md-left">${name}</h5>
-                            <span class="taghome tag-teal my-2">${phone}</span>
-                            <div class="job-right my-4 flex-shrink-0">
-                            <a href="cards/?id=${id}" class="btn d-block w-100 d-sm-inline-block btn-light">Go to ${name}</a>
-                            </div>
-                            </div>
-                        </div>
-                        `;
+          // html += `<div class="row flex-row p-3">
+          //                   <div class="job-box img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+          //                       ${image}
+          //                   </div>
+          //                   <div class="job-content">
+          //                   <h5 class="text-center text-md-left">${name}</h5>
+          //                   <span class="taghome tag-teal my-2">${phone}</span>
+          //                   <div class="job-right my-4 flex-shrink-0">
+          //                   <a href="cards/?id=${id}" class="btn d-block w-100 d-sm-inline-block btn-light">Go to ${name}</a>
+          //                   </div>
+          //                   </div>
+          //               </div>
+          //               `;
         }
       });
 
