@@ -324,6 +324,12 @@ transform:rotate(180deg);
   width: 500px;
 }
 
+.privacy-policy-text {
+  background-color: white;
+  padding: 35px;
+  border-radius: 10px;
+}
+
 .card-fields {
   overflow: scroll;
   padding:0 15px;
@@ -745,4 +751,24 @@ ul {
 }
 .mb-30 {
   margin-bottom: 30px;
+}
+
+.privacy {
+  font-family: "Roboto", sans-serif !important;
+  color: #fff;
+}
+.privacy:hover {
+  text-decoration: none;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  height: 150px;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
 }
