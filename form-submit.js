@@ -57,14 +57,16 @@ xmlHttp.onreadystatechange = function() {
         const response = JSON.parse(xmlHttp.response);
         if (response.data) {
             var item = response.data[0];
+            console.log(item);
             var name = item[6].value ? item[6].value.name : "";
+            console.log(name);
             var comment = item[8].value ? item[8].value : "";
             // var rev = item[17].value ? item[17].value : "";
             var validReview = item[17].value ? item[17].value : "";
             var image = item[21].value ? item[21].value : "";
             var repid = item[33].value ? item[33].value : "";
             var avg = item[48].value ? item[48].value.toFixed(2) : "";
-            var avgCopy = item[49].value ? item[49].value : "";
+            // var avgCopy = item[49].value ? item[49].value : "";
             user_name = name;
             if (item[7].value) {
                 document.getElementById("slaes_rep").innerHTML = item[7].value;
