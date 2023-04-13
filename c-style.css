@@ -51,6 +51,7 @@ body {
   }
 }
 
+
 .cards-page {
   margin-top: 5%;
 }
@@ -526,8 +527,10 @@ text-align:center;
 input {
   display: none;
 }
-
-
+.checkbox {
+  max-height:15px;
+  max-width: 15px;
+}
 
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
