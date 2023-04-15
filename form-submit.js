@@ -231,6 +231,8 @@ $("#testform").on("submit", function(e) {
     var comments = $("#comments").val();
     var repid = $("#repid").val();
     var stars = $("input[name='stars']:checked").val();
+    var checkbox = $("input[name='follow-up']:checked").val();
+    console.log(checkbox);
     if (stars == null) {
         swal({
             title: "warning",
@@ -266,6 +268,9 @@ $("#testform").on("submit", function(e) {
                 },
                 "8": {
                     value: comments
+                },
+                "20": {
+                    value: checkbox
                 }
             }],
             fieldsToReturn: [7]
