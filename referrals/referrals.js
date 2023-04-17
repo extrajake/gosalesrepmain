@@ -253,7 +253,7 @@ $("#testform").on("submit", function(e) {
                             title: "Success",
                             text: "Referral Submitted Successfully",
                             icon: "success"
-                        }).then(function(result) {
+                        }).then(function(_result) {
                             // location.reload(true);
                             window.location.href = "https://agent.gosales.co/cards/?id=" + id;
                         });
