@@ -231,7 +231,7 @@ $("#testform").on("submit", function(e) {
     var comments = $("#comments").val();
     var repid = $("#repid").val();
     var stars = $("input[name='stars']:checked").val();
-    var checkbox = $("input[name='follow-up']:checked").val();
+    var checkbox = $("#follow-up").val();
     console.log(checkbox);
     if (stars == null) {
         swal({

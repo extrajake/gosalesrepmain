@@ -124,7 +124,7 @@ $("#testform").on("submit", function(e) {
         if (response.metadata.createdRecordIds[0]) {
           swal({
             title: "Success",
-            text: "Thanks, your agent will call you back shortly",
+            text: "Thanks, I'll call you back shortly",
             icon: "success"
           }).then(function(result) {
             // location.reload(true);
