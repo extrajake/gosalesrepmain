@@ -58,8 +58,9 @@ xmlHttp.onreadystatechange = function() {
         if (response.data) {
             var item = response.data[0];
             console.log(item);
-            user_name = name;
             var name = item[6].value ? item[6].value.name : "";
+            user_name = name;
+            
             // console.log(name);
             // var comment = item[8].value ? item[8].value : "";
             // // var rev = item[17].value ? item[17].value : "";
@@ -191,11 +192,11 @@ $("#testform").on("submit", function(e) {
     var name = $("#name").val();
     var lastname = $("#last-name").val();
     var phone = $("#phone").val();
-    var comments = $("#comments").val();
-    var repid = $("#repid").val();
-    var stars = $("input[name='stars']:checked").val();
-    var checkbox = $("#follow-up").val();
-    console.log(checkbox);
+    var refname = $("#refname").val();
+    var reflastname = $("#reflast-name").val();
+    var refphone = $("#refphone").val();
+    var refemail = $("#refemail").val();
+    var notes = $("#notes").val();
 
         var headers = {
             "QB-Realm-Hostname": "gosales.quickbase.com",
@@ -206,29 +207,32 @@ $("#testform").on("submit", function(e) {
             to: "bsrmxrub3",
             data: [
                 {
-                "7": {
-                    value: stars
-                },
-                "14": {
-                    value: repid
-                },
-                "9": {
+                "6": {
                     value: name
                 },
-                "18": {
+                "7": {
                     value: lastname
                 },
-                "10": {
+                "8": {
                     value: phone
                 },
-                "11": {
+                "9": {
                     value: email
                 },
-                "8": {
-                    value: comments
+                "10": {
+                    value: refname
                 },
-                "20": {
-                    value: checkbox
+                "11": {
+                    value: reflastname
+                },
+                "12": {
+                    value: refphone
+                },
+                "13": {
+                    value: refemail
+                },
+                "14": {
+                    value: notes
                 }
             }
         ],
