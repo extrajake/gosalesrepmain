@@ -62,14 +62,11 @@ xmlHttp.onreadystatechange = function() {
             var name = item[6].value ? item[6].value.name : "";
             // user_name = name;
             var image = item[21].value ? item[21].value : "";
-            var rid = item[33].value ? item[33].value : "";
-            document.getElementById("rid").value = rid;
+           
             document.getElementById("rep-img").innerHTML = image;
-            document.getElementById("#slaes_rep").value = name;
-            document.getElementById("rep-name").innerHTML = name;
-            console.log(typeof rid);
+            document.getElementById("slaes_rep").value = name;
             
-            // console.log(name);
+            console.log(name);
             // var comment = item[8].value ? item[8].value : "";
             // // var rev = item[17].value ? item[17].value : "";
             // var validReview = item[17].value ? item[17].value : "";
