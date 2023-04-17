@@ -152,7 +152,7 @@ $("#testform").on("submit", function(e) {
                 }
             }
         ],
-            fieldsToReturn: [9]
+            fieldsToReturn: [7]
         };
         xmlHttp.open("POST", "https://api.quickbase.com/v1/records", true);
         for (const key in headers) {
