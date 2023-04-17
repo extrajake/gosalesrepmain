@@ -2,8 +2,9 @@ import {token} from './functions/netlifyEnv.js';
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
+const API_KEY = "";
 var data = localStorage.getItem("data");
-var user_name = "";
+// var user_name = "";
 
 // var headers = {
 //     "QB-Realm-Hostname": "gosales.quickbase.com",
@@ -59,7 +60,14 @@ xmlHttp.onreadystatechange = function() {
             var item = response.data[0];
             console.log(item);
             var name = item[6].value ? item[6].value.name : "";
-            user_name = name;
+            // user_name = name;
+            var image = item[21].value ? item[21].value : "";
+            var rid = item[33].value ? item[33].value : "";
+            document.getElementById("rid").value = rid;
+            document.getElementById("rep-img").innerHTML = image;
+            // document.getElementById("name").value = name;
+            document.getElementById("rep-name").innerHTML = name;
+            console.log(typeof rid);
             
             // console.log(name);
             // var comment = item[8].value ? item[8].value : "";
@@ -88,103 +96,11 @@ xmlHttp.onreadystatechange = function() {
             // // document.getElementById("avg").innerHTML = avgCopy;
             // document.getElementById("repid").value = repid;
 
-
-//             var headerss = {
-//                 "QB-Realm-Hostname": "gosales.quickbase.com",
-//                 Authorization: "QB-USER-TOKEN b5dge5_ph4g_0_c9g7fwvu96r3ucm42sf6dzpc36s",
-//                 "Content-Type": "application/json"
-//             };
-
-//             var body3 = {
-//                 from: "bsa26ztqb",
-//                 sortBy: [{
-//                     "fieldId": 6,
-//                     "order": "DESC"
-//                 }],
-//                 where: "{14.EX.'" + repid + "'}AND{17.EX.true}"
-//             };
-//             const xmlHttp3 = new XMLHttpRequest();
-//             xmlHttp3.open("POST", "https://api.quickbase.com/v1/records/query", true);
-//             for (const key in headerss) {
-//                 xmlHttp3.setRequestHeader(key, headerss[key]);
-//             }
-
-//             xmlHttp3.onreadystatechange = function() {
-//                 if (xmlHttp3.readyState === XMLHttpRequest.DONE) {
-//                     const response = JSON.parse(xmlHttp3.response);
-//                     if (response.data) {
-//                         // console.log(response.data);
-//                         if (response.data.length > 0) {
-//                             $(".last_reivew_box").show();
-//                             var customer_html = '<span>&ldquo;</span>' + response.data[0][8]['value'] + '<span>&rdquo;</span>';
-//                             $(".last_review_comment").html(customer_html);
-//                             $("#customer_name").text(response.data[0][9]['value']);
-//                             var html = "";
-//                                 for (var i = 0; i < response.data.length; i++) {
-//                                     html += '<div class="row py-1" style="border-bottom:1px solid #eee">';
-//                                     html += '<div class="col-md-12" style="color: black">&ldquo;' + response.data[i][8]['value'] + '&rdquo;</div>';
-//                                     html += '<div class="col-8" style="color: grey;font-size: 0.9rem;">' + response.data[i][9]['value'] + '</div>';
-//                                     html += '<div class="col-4 text-right">';
-//                                     html += '<small style="font-style: italic;color: gray;">' + response.data[i][6]['value'] + '</small>';
-//                                     html += '</div>';
-//                                     html += '</div>';
-//                                 }
-//                                 if (html) {
-//                                     $(".other_review_section").show();
-//                                     $("#other_review_box").html(html);
-//                                 } else {
-//                                     $(".other_review_box").hide();
-//                                 }
-//                         }
-
-//                     }
-//                 }
-//             };
-
-//             xmlHttp3.send(JSON.stringify(body3));
-
         }
     }
 };
 
 xmlHttp.send(JSON.stringify(body));
-
-// var headers = {
-//     "QB-Realm-Hostname": "gosales.quickbase.com",
-//     Authorization: "b4zk43xsngt3xd7ximtbdbxycvc",
-//     "QB-App-Token": "b4zk43xsngt3xd7ximtbdbxycvc",
-//     "Content-Type": "application/json"
-// };
-
-// var body = {
-//     from: "bsa26ztqb",
-//     // from2: "bsa26ztqb",
-//     select: [3, 6, 7, 8, 15, 16, 17],
-//     where: "{42.EX.'" + id + "'}"
-// };
-
-// const xmlHttp2 = new XMLHttpRequest();
-
-
-// xmlHttp2.open("POST", "https://api.quickbase.com/v1/records/query", true);
-// for (const key in headers) {
-//     xmlHttp2.setRequestHeader(key, headers[key]);
-// }
-
-// xmlHttp2.onreadystatechange = function() {
-//     if (xmlHttp2.readyState === XMLHttpRequest.DONE) {
-
-//         const response = JSON.parse(xmlHttp2.response);
-        
-
-//         if (response.data) {
-//             console.log(xmlHttp2.response);
-//             var item2 = response.data[0];
-//             var name2 = item2[6].value ? item2[6].value.name2 : "";
-//             document.getElementById("latest-review").innerHTML = name2;
-//         }
-//     }
-// };
 
 $("#testform").on("submit", function(e) {
     e.preventDefault();
@@ -246,7 +162,6 @@ $("#testform").on("submit", function(e) {
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState === XMLHttpRequest.DONE) {
                 const response = JSON.parse(xmlHttp.response);
-
                 if (response.metadata) {
                     if (response.metadata.createdRecordIds[0]) {
                         swal({
@@ -268,8 +183,6 @@ $("#testform").on("submit", function(e) {
             }
         };
         xmlHttp.send(JSON.stringify(body));
-
-
 });
 
   }
