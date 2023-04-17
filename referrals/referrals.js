@@ -37,9 +37,9 @@ const getToken = async (account_id, key) => {
       "QB-APP-TOKEN": apptoken,
       "Content-Type": "application/json",
     };
+
 var body = {
     from: "bsazkzsm2",
-    // from2: "bsa26ztqb",
     select: [3, 6, 7, 8, 15, 16, 17, 21, 33, 42, 45, 48, 49],
     where: "{42.EX.'" + id + "'}"
 };
@@ -253,7 +253,7 @@ $("#testform").on("submit", function(e) {
                             title: "Success",
                             text: "Referral Submitted Successfully",
                             icon: "success"
-                        }).then(function(_result) {
+                        }).then(function(result) {
                             // location.reload(true);
                             window.location.href = "https://agent.gosales.co/cards/?id=" + id;
                         });
