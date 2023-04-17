@@ -58,7 +58,8 @@ xmlHttp.onreadystatechange = function() {
         if (response.data) {
             var item = response.data[0];
             console.log(item);
-            // var name = item[6].value ? item[6].value.name : "";
+            user_name = name;
+            var name = item[6].value ? item[6].value.name : "";
             // console.log(name);
             // var comment = item[8].value ? item[8].value : "";
             // // var rev = item[17].value ? item[17].value : "";
