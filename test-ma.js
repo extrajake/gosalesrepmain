@@ -81,11 +81,13 @@ const render = async () => {
     
                 var herf = "../review/?id=" + id;
                 var callback_url = "../callback/?id=" + id;
+                var referrals = "../referrals/?id=" + id;
                 document.getElementById("call_btn").href = "tel:+1" + phone;
                 document.getElementById("mail_btn").href = "mailto:" + email;
     
                 document.getElementById("review_btn").href = herf;
                 document.getElementById("callback_url").href = callback_url;
+                document.getElementById("referrals").href = referrals;
             }
             
         }
