@@ -77,6 +77,7 @@ xmlHttp.onreadystatechange = function() {
   }
 };
 xmlHttp.send(JSON.stringify(body));
+
 $("#testform").on("submit", function(e) {
   e.preventDefault();
   var email = $("#email").val();

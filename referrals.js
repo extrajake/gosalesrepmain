@@ -2,7 +2,7 @@ import {token} from './functions/netlifyEnv.js';
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get("id");
-const API_KEY = "";
+// const API_KEY = "";
 var data = localStorage.getItem("data");
 // var user_name = "";
 
