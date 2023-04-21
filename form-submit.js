@@ -228,16 +228,16 @@ $("#testform").on("submit", function(e) {
     var repid = $("#repid").val();
     var stars = $("input[name='stars']:checked").val();
     var checkbox = $("#follow-up").val();
-    var checked = $("#email").required = true;
-    var unchecked = $("#email").required = false;
+    // var checked = $("#email").required = true;
+    // var unchecked = $("#email").required = false;
     
     //testing checkbox
 
-    if (checkbox = '1') {
-        checked;
-    } else {
-        unchecked;
-    }
+    // if (checkbox = '1') {
+    //     checked;
+    // } else {
+    //     unchecked;
+    // }
 
     
 
