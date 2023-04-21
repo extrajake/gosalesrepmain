@@ -218,10 +218,6 @@ xmlHttp2.onreadystatechange = function() {
 // console.log (pullReviews);
 
 
-
-
-
-
 $("#testform").on("submit", function(e) {
     e.preventDefault();
     var email = $("#email").val();
@@ -232,7 +228,16 @@ $("#testform").on("submit", function(e) {
     var repid = $("#repid").val();
     var stars = $("input[name='stars']:checked").val();
     var checkbox = $("#follow-up").val();
-    console.log(checkbox);
+    var checked = $("#email").required = true;
+    var unchecked = $("#email").required = false;
+    
+
+    if (checkbox = '1') {
+        checked;
+    } else {
+        unchecked;
+    }
+
     if (stars == null) {
         swal({
             title: "warning",
@@ -271,10 +276,20 @@ $("#testform").on("submit", function(e) {
                 },
                 "20": {
                     value: checkbox
+                    
                 }
             }],
             fieldsToReturn: [7]
         };
+
+        // if ($(checkbox).val(this.checked == 1)) {
+        //     console.log('checked');
+        // }
+        // else if ($(checkbox).val(this.checked == 0)){
+        //     console.log('unchecked');
+        // };
+        
+        
         xmlHttp.open("POST", "https://api.quickbase.com/v1/records", true);
         for (const key in headers) {
             xmlHttp.setRequestHeader(key, headers[key]);
@@ -283,8 +298,8 @@ $("#testform").on("submit", function(e) {
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState === XMLHttpRequest.DONE) {
                 const response = JSON.parse(xmlHttp.response);
+                if (response.metadata) {    
 
-                if (response.metadata) {
                     if (response.metadata.createdRecordIds[0]) {
                         swal({
                             title: "Success",
@@ -307,7 +322,9 @@ $("#testform").on("submit", function(e) {
         xmlHttp.send(JSON.stringify(body));
 
     }
+    
 });
 
   }
+  
   render()

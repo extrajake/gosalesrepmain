@@ -142,7 +142,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="email" required name="email" placeholder="example@mail.com">
+                            <input type="email" class="form-control" id="email" name="email" value="" placeholder="example@mail.com">
                         </div>
 
                         <div class="form-group">
@@ -155,7 +155,7 @@
                             <textarea class="form-control" id="comments" required name="comments" rows="3" placeholder="Write Comments..."></textarea>
                         </div>
                         <div class="form-group d-flex">
-                            <input type="checkbox" class="form-control checkbox m-1" id="follow-up" name="follow-up" value="yes">
+                            <input type="checkbox" class="form-control checkbox m-1" id="follow-up" name="follow-up" value="" onclick="$(this).val(this.checked ? 1 : 0)" >
                             <label for="follow-up" class="mx-2"> Follow Up Requested</label><br>
                         </div>
                     </div>
