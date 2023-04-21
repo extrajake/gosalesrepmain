@@ -231,12 +231,15 @@ $("#testform").on("submit", function(e) {
     var checked = $("#email").required = true;
     var unchecked = $("#email").required = false;
     
+    //testing checkbox
 
     if (checkbox = '1') {
         checked;
     } else {
         unchecked;
     }
+
+    
 
     if (stars == null) {
         swal({
