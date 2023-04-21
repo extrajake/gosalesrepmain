@@ -8,11 +8,6 @@ var data = localStorage.getItem("data");
 console.log(id);
 
 
-// require("dotenv").config();
-
-// var secretKey = process.env.SECRET_KEY;
-// console.log(secretKey);
-
 const getToken = async (account_id, key) => {
     const url = `https://api.netlify.com/api/v1/accounts/${account_id}/env/${key}`;
     const response = await fetch(url, {
