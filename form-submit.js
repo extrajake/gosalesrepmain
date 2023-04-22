@@ -230,16 +230,8 @@ $("#testform").on("submit", function(e) {
     var checkbox = $("#follow-up").val();
     // var checked = $("#email").required = true;
     // var unchecked = $("#email").required = false;
-    
-    //testing checkbox
 
-    // if (checkbox = '1') {
-    //     checked;
-    // } else {
-    //     unchecked;
-    // }
-
-    
+    console.log(checkbox);
 
     if (stars == null) {
         swal({
