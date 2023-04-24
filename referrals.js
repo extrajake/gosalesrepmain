@@ -25,45 +25,42 @@ const getToken = async (account_id, key) => {
     let usertoken = await getToken("jlacouvee", "USERTOKEN");
   
   
-//     var headers = {
-//       "QB-Realm-Hostname": "gosales.quickbase.com",
-//       Authorization: "QB-USER-TOKEN " + usertoken,
-//       "QB-APP-TOKEN": apptoken,
-//       "Content-Type": "application/json",
-//     };
+    var headers = {
+      "QB-Realm-Hostname": "gosales.quickbase.com",
+      Authorization: "QB-USER-TOKEN " + usertoken,
+      "QB-APP-TOKEN": apptoken,
+      "Content-Type": "application/json",
+    };
 
-// var body = {
-//     from: "bsazkzsm2",
-//     select: [3, 6, 7, 8, 15, 16, 17, 21, 33, 42, 45, 48, 49],
-//     where: "{42.EX.'" + id + "'}"
-// };
+var body = {
+    from: "bsazkzsm2",
+    select: [3, 6, 7, 8, 15, 16, 17, 21, 33, 42, 45, 48, 49],
+    where: "{42.EX.'" + id + "'}"
+};
 
 
-// const xmlHttp = new XMLHttpRequest();
+const xmlHttp = new XMLHttpRequest();
 
-// xmlHttp.open("POST", "https://api.quickbase.com/v1/records/query", true);
-// for (const key in headers) {
-//     xmlHttp.setRequestHeader(key, headers[key]);
-// }
+xmlHttp.open("POST", "https://api.quickbase.com/v1/records/query", true);
+for (const key in headers) {
+    xmlHttp.setRequestHeader(key, headers[key]);
+}
 
-// xmlHttp.onreadystatechange = function() {
-//     if (xmlHttp.readyState === XMLHttpRequest.DONE) {
-//       const response = JSON.parse(xmlHttp.response);
-//       if (response.data) {
-//         var item = response.data[0];
-//         var name = item[6].value ? item[6].value.name : "";
-//         var image = item[21].value ? item[21].value : "";
-//         var rid = item[33].value ? item[33].value : "";
-//         // document.getElementById("rid").value = rid;
-//         // document.getElementById("rep-img").innerHTML = image;
-//         // document.getElementById("name").value = name;
-//         // document.getElementById("rep-name").innerHTML = name;
-//         console.log(typeof rid);
-//       }
-//     }
-//   };
+xmlHttp.onreadystatechange = function() {
+    if (xmlHttp.readyState === XMLHttpRequest.DONE) {
+      const response = JSON.parse(xmlHttp.response);
+      if (response.data) {
+        var item = response.data[0];
+        var name = item[6].value ? item[6].value.name : "";
+        var rid = item[33].value ? item[33].value : "";
+        // document.getElementById("slaes_rep").value = name;
+        document.getElementById("rid").value = rid;
+        console.log(rid, name);
+      }
+    }
+  };
 
-// xmlHttp.send(JSON.stringify(body));
+xmlHttp.send(JSON.stringify(body));
 
 $("#testform").on("submit", function(e) {
     e.preventDefault();
@@ -76,6 +73,7 @@ $("#testform").on("submit", function(e) {
     var refphone = $("#refphone").val();
     var refemail = $("#refemail").val();
     var notes = $("#notes").val();
+    var rid = $("#rid").val();
 
         var headers = {
             "QB-Realm-Hostname": "gosales.quickbase.com",
@@ -112,6 +110,9 @@ $("#testform").on("submit", function(e) {
                 },
                 "14": {
                     value: notes
+                },
+                "15": {
+                    value: rid
                 }
             }
         ],
